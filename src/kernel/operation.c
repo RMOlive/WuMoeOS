@@ -6,6 +6,7 @@
 #include <wumoe/time.h>
 #include <wumoe/task.h>
 #include <wumoe/memory.h>
+#include <wumoe/console.h>
 
 bool operation_eq(const char *ch, const char *op) {
     while(*op != EOS) {
@@ -80,7 +81,9 @@ void operation(char *op) {
         }
     } else if (operation_eq(op, "memory")) {
         printf("Memory Size: %d MiB", (memory_size - memory_base) / (1024 * 1024));
-    } else
+    } else if (operation_eq(op, "clear"))
+        console_clear();
+    else
         printf("Undefined operation %s!!!", op);
 }
 
