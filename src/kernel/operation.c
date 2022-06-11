@@ -9,12 +9,9 @@
 #include <wumoe/console.h>
 
 bool operation_eq(const char *ch, const char *op) {
-    while(*op != EOS) {
-        if (*ch != *op)
+    while(*op != EOS)
+        if (*ch++ != *op++)
             return false;
-        ++op;
-        ++ch;
-    }
     return true;
 }
 
