@@ -41,9 +41,19 @@ char *task_uid_to_string(int uid) {
 }
 
 void operation(char *op) {
-    if (operation_eq(op, "system"))
-        printf("%s %s", OS_NAME, OS_VERSION);
-    else if (operation_eq(op, "help")) {
+    if (operation_eq(op, "system")) {
+        printf("%s %s\n", OS_NAME, OS_VERSION);
+        print("Anther: RMOLive (rmolives@gmail.com)\n");
+        printf("Memory Size: %d MiB\n", (memory_size - memory_base) / (1024 * 1024));
+        size_t task_size = 0;
+        task_t **table = get_task_table();
+        for (size_t i = 0; i < NR_TASKS; ++i) {
+            if (table[i] == NULL)
+                continue;
+            ++task_size;
+        }
+        printf("Task Size: %d", task_size);
+    } else if (operation_eq(op, "help")) {
         print("1. help : get help.\n");
         print("2. echo [value] : print value.\n");
         print("3. time : get time.\n");
