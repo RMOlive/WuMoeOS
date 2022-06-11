@@ -35,9 +35,9 @@ char *task_state_to_string(task_state_t state) {
 }
 
 char *task_uid_to_string(int uid) {
-    if (uid == NORMAL_USER)
-        return "NORMAL_USER";
-    return "KERNEL_USER";
+    if (uid == KERNEL_USER)
+        return "KERNEL_USER";
+    return "NORMAL_USER";
 }
 
 void operation(char *op) {
