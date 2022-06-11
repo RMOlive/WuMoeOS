@@ -50,7 +50,7 @@ print:
 loading:
     db "Loading WuMoe OS...", 10, 13, 0
 detecting:
-	db "Datacting Memory Success...", 10, 13, 0
+    db "Datacting Memory Success...", 10, 13, 0
 
 error:
     mov si, .msg
