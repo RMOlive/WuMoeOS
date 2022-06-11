@@ -64,7 +64,7 @@ void operation(char *op) {
             if (ptr == NULL)
                 continue;
             printf("\nname: %s", ptr->name);
-            printf("\nlevel: %s", task_uid_to_string(ptr->uid));
+            printf("\nuid: %s", task_uid_to_string(ptr->uid));
             printf("\nstate: %s", task_state_to_string(ptr->state));
             print("\n----------------------");
         }
