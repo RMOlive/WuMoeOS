@@ -94,14 +94,14 @@ print:
     ret
 
 booting:
-	db "Booting WuMoe OS...", 10, 13, 0
+    db "Booting WuMoe OS...", 10, 13, 0
 
 error:
-	mov si, .msg
-	call print
-	hlt
-	jmp $
-	.msg db "Booting Error!!!", 10, 13, 0
+    mov si, .msg
+    call print
+    hlt
+    jmp $
+    .msg db "Booting Error!!!", 10, 13, 0
 
 times 510 - ($ - $$) db 0
 

@@ -22,18 +22,18 @@ detect_memory:
     jnz .next
     mov si, detecting
     call print
-	jmp prepare_protected_mode
+    jmp prepare_protected_mode
 
 prepare_protected_mode:
-	cli
-	in al, 0x92
-	or al, 0b10
-	out 0x92, al
-	lgdt [gdt_ptr]
-	mov eax, cr0
-	or eax, 1
-	mov cr0, eax
-	jmp dword code_selector:protect_mode
+    cli
+    in al, 0x92
+    or al, 0b10
+    out 0x92, al
+    lgdt [gdt_ptr]
+    mov eax, cr0
+    or eax, 1
+    mov cr0, eax
+    jmp dword code_selector:protect_mode
 
 print:
     mov ah, 0x0e
@@ -162,5 +162,5 @@ gdt_data:
 gdt_end:
 
 ards_count:
-	dd 0
+    dd 0
 ards_buffer:

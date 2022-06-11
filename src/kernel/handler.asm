@@ -88,7 +88,6 @@ INTERRUPT_HANDLER 0x2d, 0
 INTERRUPT_HANDLER 0x2e, 0
 INTERRUPT_HANDLER 0x2f, 0
 
-
 section .data
 global handler_entry_table
 handler_entry_table:

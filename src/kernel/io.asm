@@ -4,24 +4,24 @@ section .text
 
 global inb
 inb:
-	push ebp
-	mov ebp, esp
-	xor eax, eax
-	mov edx, [ebp + 8]
-	in al, dx
-	jmp $+2
-	jmp $+2
-	jmp $+2
-	leave
-	ret
+    push ebp
+    mov ebp, esp
+    xor eax, eax
+    mov edx, [ebp + 8]
+    in al, dx
+    jmp $+2
+    jmp $+2
+    jmp $+2
+    leave
+    ret
 
 global outb
 outb:
     push ebp
     mov ebp, esp
     mov edx, [ebp + 8]
-	mov eax, [ebp + 12]
-	out dx, al
+    mov eax, [ebp + 12]
+    out dx, al
     jmp $+2
     jmp $+2
     jmp $+2
