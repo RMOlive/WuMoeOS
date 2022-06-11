@@ -58,7 +58,7 @@ void operation(char *op) {
         print("4. task : get task table.\n");
         print("5. system : get system information.\n");
         print("6. memory : get memory information.\n");
-        print("7. clear : console clear.")
+        print("7. clear : console clear.");
     } else if (operation_eq(op, "echo"))
         printf("%s", strchr(op, ' ') + 1);
     else if (operation_eq(op, "time")) {

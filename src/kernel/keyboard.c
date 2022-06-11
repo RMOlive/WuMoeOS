@@ -79,7 +79,6 @@ u32 map_key(u8 scan_code) {
     if(scan_code == SLASH_SCAN && esc)
         return '/';
     u32 *keys_row = &keymap[scan_code * MAP_COLS];
-    u8 lock = lock;
     bool caps = shift;
     if((lock & NUM_LOCK) != 0 && HOME_SCAN <= scan_code && scan_code <= DEL_SCAN)
         caps = !caps;
@@ -128,7 +127,7 @@ void setting_led() {
 
 u32 key_make_break(u8 scan_code) {
     bool is_make = (scan_code & KEY_BIT) == 0;
-    u32 ch = map_key((scan_code &= KEY));
+    u32 ch = map_key((scan_code & KEY));
     bool escape = esc;
     esc = false;
 
