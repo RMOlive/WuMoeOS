@@ -55,8 +55,7 @@ void memory_init(u32 magic, u32 addr) {
                 memory_size = (u32)ptr->size;
             }
         }
-    }
-    else
+    } else
         printf("Memory init magic unknown 0x%p\n", magic);
     printf("ARDS count %d\n", count);
     printf("Memory base 0x%p\n", (u32)memory_base);
